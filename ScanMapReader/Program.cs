@@ -11,7 +11,7 @@ namespace ScanMapEditor
         static void Main(string[] args)
         {
             var setting = Repository.ScanMapSetting.Get();
-            Console.WriteLine(BitConverter.ToString(setting));
+            Console.WriteLine(BitConverter.ToString(setting.ToArray()));
             Console.Read();
         }
     }

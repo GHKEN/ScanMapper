@@ -9,12 +9,12 @@ namespace ScanMapEditor.Repository
 {
     class ScanMapSetting
     {
-        public static byte[] Get()
+        public static Entity.ScanMapSetting Get()
         {
             RegistryKey regKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Keyboard Layout", false);
 
             byte[] byteArray = (byte[])regKey.GetValue("Scancode Map");
-            return byteArray;
+            return Factory.ScanMapSetting.CreateFromBytes(byteArray);
         }
     }
 }
